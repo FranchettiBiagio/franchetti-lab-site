@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Franchetti Lab — Suite di strumenti per fotografi</title>
+<meta name="description" content="Franchetti Lab 0.1: da una fotografia di riferimento a una LUT 3D, applicata a un'intera serie. Applica LUT .cube, 24 look Franchetti Arts in omaggio. Windows 10 e 11, elaborazione locale." />
+<meta name="theme-color" content="#0b0a0a" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Franchetti Lab — Un riferimento. Tutta la serie." />
+<meta property="og:description" content="Novità 0.1: Copia look, Applica LUT e 24 look Franchetti Arts in omaggio. Per Windows 10 e 11, tutto in locale." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta property="og:locale" content="it_IT" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preload" href="assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="pagina-home">
+
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata testata--sovrapposta" id="testata">
+  <div class="testata__interna">
+    <a class="marchio" href="index.html" aria-label="Franchetti Lab, torna all'inizio">
+      <svg class="marchio__segno" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle cx="20" cy="20" r="13.4" fill="none" stroke="currentColor" stroke-width="1.1" />
+        <polygon points="20,12.6 26.4,16.3 26.4,23.7 20,27.4 13.6,23.7 13.6,16.3" fill="currentColor" opacity=".9" />
+        <path d="M20 20 20 6.6M20 20 31.6 26.7M20 20 8.4 26.7" stroke="currentColor" stroke-width="1.1" />
+      </svg>
+      <span class="marchio__testo">
+        <strong>Franchetti Lab</strong>
+        <small>Suite di strumenti per fotografi</small>
+      </span>
+    </a>
+
+    <button class="menu__bottone" id="menuBottone" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+      <span class="solo-lettori">Apri il menu</span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Sezioni del sito">
+      <a href="#novita">Novità</a>
+      <a href="#confronti">Confronti</a>
+      <a href="#look">Look</a>
+      <a href="guida.html">Guida</a>
+      <a href="#scarica">Download</a>
+      <a class="menu__cta" href="#scarica">Scarica 0.1</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto">
+
+  <!-- ================================================================ apertura -->
+  <section class="apertura" id="top" aria-labelledby="titolo-apertura">
+    <div class="apertura__fondo" aria-hidden="true">
+      <img src="assets/vetrina/hero.jpg" alt="" width="2400" height="1500" />
+    </div>
+    <div class="apertura__velo" aria-hidden="true"></div>
+
+    <div class="contenitore apertura__griglia">
+      <div class="apertura__testo">
+        <p class="occhiello occhiello--chiaro"><span class="occhiello__linea"></span>Novità 0.1 · Windows 10 e 11</p>
+        <h1 class="display" id="titolo-apertura">Un riferimento.<br /><em>Tutta la serie.</em></h1>
+        <p class="apertura__frase">
+          Franchetti Lab legge una fotografia di riferimento, ne ricava una LUT 3D
+          e la applica a un'intera serie. Oppure usa una LUT che hai già:
+          fino a 100% di intensità, prima e dopo sotto controllo.
+        </p>
+        <div class="azioni">
+          <a class="bottone bottone--pieno" href="#scarica">
+            Scarica il programma
+            <span>MSIX · 64 bit · 45 MB</span>
+          </a>
+          <a class="bottone bottone--contorno" href="downloads/Franchetti_Arts_Serie_Lab.zip" download>
+            24 look in omaggio
+            <span>ZIP · 975 KB</span>
+          </a>
+        </div>
+        <dl class="dati-apertura">
+          <div><dt>Look</dt><dd>24 in omaggio</dd></div>
+          <div><dt>Formato</dt><dd>LUT 3D 17³</dd></div>
+          <div><dt>Elaborazione</dt><dd>Solo in locale</dd></div>
+        </dl>
+      </div>
+
+      <p class="apertura__didascalia">
+        Ritratto editoriale con il look <strong>Ruggine Viva</strong>.
+        Fotografia di repertorio a licenza libera: <a href="crediti.html">crediti</a>.
+      </p>
+    </div>
+
+    <a class="apertura__scorri" href="#novita" aria-label="Scorri alle novità">
+      <span></span>
+      <small>Scopri la 0.1</small>
+    </a>
+  </section>
+
+  <!-- ================================================================= novità -->
+  <section class="sezione" id="novita" aria-labelledby="titolo-novita">
+    <div class="contenitore">
+      <div class="testata-sezione testata-sezione--divisa">
+        <div class="testata-sezione__titolo">
+          <p class="occhiello">Novità 0.1</p>
+          <h2 class="display-2" id="titolo-novita">La prima versione<br /><em>è già uno strumento.</em></h2>
+        </div>
+        <div class="testata-sezione__nota">
+          <p>
+            Nessuna anteprima, nessun pulsante “prossimamente”: due strumenti
+            completi che leggono le fotografie vere e lavorano su cartelle intere,
+            alla risoluzione originale.
+          </p>
+          <p class="firma">Franchetti Lab · versione 0.1.0</p>
+        </div>
+      </div>
+
+      <div class="novita-griglia">
+        <article class="novita rivela">
+          <div class="novita__testa">
+            <span class="novita__numero">01</span>
+            <span class="etichetta">In questa versione</span>
+          </div>
+          <h3>Copia look</h3>
+          <p>
+            Scegli la fotografia che ti piace. L'app ne legge tono, bilanciamento
+            e saturazione, costruisce una LUT 3D e la applica alle tue immagini.
+            Non viene copiato un pixel: viene copiata la resa.
+          </p>
+          <ul class="micro-elenco">
+            <li>Reference → LUT <code>.cube</code></li>
+            <li>Intensità da 0 a 100%</li>
+            <li>Salvataggio del look per riusarlo</li>
+          </ul>
+        </article>
+
+        <article class="novita rivela">
+          <div class="novita__testa">
+            <span class="novita__numero">02</span>
+            <span class="etichetta">In questa versione</span>
+          </div>
+          <h3>Applica LUT</h3>
+          <p>
+            Trascina un file <code>.cube</code> qualsiasi, oppure parti dai dodici
+            look già dentro l'app. Regola l'intensità, guarda il confronto e
+            applica a una o a cento immagini.
+          </p>
+          <ul class="micro-elenco">
+            <li>LUT 3D in formato Adobe Cube</li>
+            <li>Anteprima prima / dopo</li>
+            <li>12 look Franchetti Arts inclusi</li>
+          </ul>
+        </article>
+
+        <article class="novita rivela">
+          <div class="novita__testa">
+            <span class="novita__numero">03</span>
+            <span class="etichetta">In questa versione</span>
+          </div>
+          <h3>Serie Lab</h3>
+          <p>
+            Ventiquattro look nuovi, distinti dai 108 della prima raccolta
+            Franchetti Arts. Dodici sono nell'app, tutti e ventiquattro sono nel
+            pacchetto in omaggio.
+          </p>
+          <ul class="micro-elenco">
+            <li>Caldi, freddi, verdi, materici, elettrici</li>
+            <li>Formato <code>.cube</code> 17³</li>
+            <li>Uso libero, anche commerciale</li>
+          </ul>
+        </article>
+
+        <article class="novita rivela">
+          <div class="novita__testa">
+            <span class="novita__numero">04</span>
+            <span class="etichetta">Sempre</span>
+          </div>
+          <h3>In locale, davvero</h3>
+          <p>
+            Nessun account, nessun caricamento, nessun abbonamento. Le immagini
+            vengono lette e scritte solo nelle cartelle che scegli tu, anche
+            quando il computer è offline.
+          </p>
+          <ul class="micro-elenco">
+            <li>JPEG, PNG, TIFF, WEBP, BMP</li>
+            <li>16 formati RAW</li>
+            <li>EXIF conservati nei JPEG</li>
+          </ul>
+        </article>
+      </div>
+
+      <figure class="schermo schermo--largo rivela">
+        <div class="schermo__cornice">
+          <img src="assets/lab-copia-look.png"
+               alt="Finestra di Franchetti Lab, scheda Copia look: a sinistra il riferimento e l'intensità, a destra il confronto prima e dopo."
+               width="1508" height="937" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="figcaption__numero">Fig. 01</span>
+          Copia look: la fotografia di riferimento in alto, il confronto
+          <em>prima / dopo</em> al centro, il registro delle operazioni in basso.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =============================================================== confronti -->
+  <section class="sezione sezione--scura" id="confronti" aria-labelledby="titolo-confronti">
+    <div class="contenitore">
+      <div class="testata-sezione testata-sezione--divisa">
+        <div class="testata-sezione__titolo">
+          <p class="occhiello">La differenza</p>
+          <h2 class="display-2" id="titolo-confronti">Trascina.<br /><em>Guarda.</em></h2>
+        </div>
+        <div class="testata-sezione__nota">
+          <p>
+            A sinistra l'originale, a destra lo stesso scatto con il look
+            applicato. Nessun ritocco locale, nessun trucco: solo la LUT,
+            allo stesso ritaglio.
+          </p>
+        </div>
+      </div>
+
+      <figure class="confronto-blocco rivela">
+        <div class="confronto" data-confronto tabindex="0" role="slider"
+             aria-label="Confronto prima e dopo, look Ruggine Viva al 62 per cento"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos: 50%">
+          <img class="confronto__img" src="assets/vetrina/confronto-ruggine-dopo.jpg"
+               alt="Ritratto di moda con il look Ruggine Viva applicato: incarnato più caldo, rosso del vestito più pieno."
+               width="1600" height="1050" loading="lazy" />
+          <img class="confronto__img confronto__img--prima" src="assets/vetrina/confronto-ruggine-prima.jpg"
+               alt="Lo stesso ritratto di moda senza look: tonalità più neutre."
+               width="1600" height="1050" loading="lazy" />
+          <span class="confronto__etichetta confronto__etichetta--prima">Prima</span>
+          <span class="confronto__etichetta confronto__etichetta--dopo">Dopo</span>
+          <span class="confronto__maniglia" aria-hidden="true"><i></i></span>
+        </div>
+        <figcaption class="confronto__didascalia">
+          <span class="confronto__look">Ruggine Viva</span>
+          <span>Serie Lab · intensità 62%</span>
+          <span class="confronto__nota">Pelle più calda, rosso più denso, ombre che restano leggibili.</span>
+        </figcaption>
+      </figure>
+
+      <div class="confronti-coppia">
+        <figure class="confronto-blocco confronto-blocco--piccolo rivela">
+          <div class="confronto" data-confronto tabindex="0" role="slider"
+               aria-label="Confronto prima e dopo, look Grafite al 100 per cento"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos: 50%">
+            <img class="confronto__img" src="assets/vetrina/confronto-grafite-dopo.jpg"
+                 alt="Ritratto in bianco e nero con il look Grafite."
+                 width="1600" height="1050" loading="lazy" />
+            <img class="confronto__img confronto__img--prima" src="assets/vetrina/confronto-grafite-prima.jpg"
+                 alt="Lo stesso ritratto a colori, prima del look Grafite."
+                 width="1600" height="1050" loading="lazy" />
+            <span class="confronto__etichetta confronto__etichetta--prima">Prima</span>
+            <span class="confronto__etichetta confronto__etichetta--dopo">Dopo</span>
+            <span class="confronto__maniglia" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="confronto__didascalia">
+            <span class="confronto__look">Grafite</span>
+            <span>Intensità 100%</span>
+            <span class="confronto__nota">Il colore diventa struttura: neri pieni, mezzi toni puliti.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="confronto-blocco confronto-blocco--piccolo rivela">
+          <div class="confronto" data-confronto tabindex="0" role="slider"
+               aria-label="Confronto prima e dopo, look Cobalto Profondo al 100 per cento"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos: 50%">
+            <img class="confronto__img" src="assets/vetrina/confronto-notte-dopo.jpg"
+                 alt="Operatore con cinema camera sul set, con il look Cobalto Profondo: ombre fredde, luce della finestra più controllata."
+                 width="1600" height="1050" loading="lazy" />
+            <img class="confronto__img confronto__img--prima" src="assets/vetrina/confronto-notte-prima.jpg"
+                 alt="Lo stesso set cinematografico senza look: luce neutra."
+                 width="1600" height="1050" loading="lazy" />
+            <span class="confronto__etichetta confronto__etichetta--prima">Prima</span>
+            <span class="confronto__etichetta confronto__etichetta--dopo">Dopo</span>
+            <span class="confronto__maniglia" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="confronto__didascalia">
+            <span class="confronto__look">Cobalto Profondo</span>
+            <span>Intensità 100%</span>
+            <span class="confronto__nota">Intervento sottile: le ombre si raffreddano, la scena resta naturale.</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="nota-immagini">
+        Fotografie di repertorio usate come dimostrazione, con licenze libere.
+        Autori e licenze nella pagina <a href="crediti.html">Crediti</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================================== look -->
+  <section class="sezione" id="look" aria-labelledby="titolo-look">
+    <div class="contenitore">
+      <div class="testata-sezione testata-sezione--divisa">
+        <div class="testata-sezione__titolo">
+          <p class="occhiello">Franchetti Arts · Serie Lab</p>
+          <h2 class="display-2" id="titolo-look">Ventiquattro look.<br /><em>Una sola serie.</em></h2>
+        </div>
+        <div class="testata-sezione__nota">
+          <p>
+            Una raccolta nuova, distinta dai 108 look della prima serie Franchetti
+            Arts: nessun doppione, toni più decisi, pensata per chi lavora in
+            serie e ha bisogno di coerenza. Le tessere qui sotto sono tutte
+            realizzate con i file del pacchetto.
+          </p>
+        </div>
+      </div>
+
+      <div class="filtri" role="group" aria-label="Filtra i look per famiglia">
+        <button class="filtro is-attivo" data-famiglia="tutti" aria-pressed="true">Tutti e 24</button>
+        <button class="filtro" data-famiglia="caldi" aria-pressed="false">Caldi</button>
+        <button class="filtro" data-famiglia="freddi" aria-pressed="false">Freddi</button>
+        <button class="filtro" data-famiglia="verdi" aria-pressed="false">Verdi</button>
+        <button class="filtro" data-famiglia="materici" aria-pressed="false">Materici</button>
+        <button class="filtro" data-famiglia="elettrici" aria-pressed="false">Elettrici</button>
+        <label class="interruttore">
+          <input type="checkbox" id="soloInclusi" />
+          <span class="interruttore__traccia" aria-hidden="true"></span>
+          <span>Solo quelli nell'app</span>
+        </label>
+      </div>
+
+      <p class="conteggio" id="conteggioLook" aria-live="polite">24 look</p>
+
+      <ul class="look" id="grigliaLook" role="list">
+        <li class="look__voce" data-famiglia="caldi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_01_Ambra_Toscana.jpg" alt="Ritratto di moda con il look Ambra Toscana" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">01</span><span class="look__nome">Ambra Toscana</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="caldi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_02_Miele_di_Castagno.jpg" alt="Ritratto di moda con il look Miele di Castagno" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">02</span><span class="look__nome">Miele di Castagno</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="caldi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_03_Terracotta.jpg" alt="Ritratto di moda con il look Terracotta" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">03</span><span class="look__nome">Terracotta</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="caldi">
+          <figure>
+            <img src="assets/looks/look_04_Ocra.jpg" alt="Set cinematografico con il look Ocra" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">04</span><span class="look__nome">Ocra</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="caldi">
+          <figure>
+            <img src="assets/looks/look_05_Arancio_Bruciato.jpg" alt="Ritratto di moda con il look Arancio Bruciato" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">05</span><span class="look__nome">Arancio Bruciato</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="caldi">
+          <figure>
+            <img src="assets/looks/look_06_Sabbia_Chiara.jpg" alt="Set cinematografico con il look Sabbia Chiara" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">06</span><span class="look__nome">Sabbia Chiara</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="freddi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_07_Cobalto_Profondo.jpg" alt="Cinema camera con il look Cobalto Profondo" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">07</span><span class="look__nome">Cobalto Profondo</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="freddi">
+          <figure>
+            <img src="assets/looks/look_08_Blu_Ghiaccio.jpg" alt="Ritratto di moda con il look Blu Ghiaccio" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">08</span><span class="look__nome">Blu Ghiaccio</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="freddi">
+          <figure>
+            <img src="assets/looks/look_09_Lavanda.jpg" alt="Primo piano di moda con il look Lavanda" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">09</span><span class="look__nome">Lavanda</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="freddi">
+          <figure>
+            <img src="assets/looks/look_10_Petrolio.jpg" alt="Troupe sul set con il look Petrolio" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">10</span><span class="look__nome">Petrolio</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="freddi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_11_Nebbia_Alta.jpg" alt="Ritratto di moda con il look Nebbia Alta" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">11</span><span class="look__nome">Nebbia Alta</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="freddi">
+          <figure>
+            <img src="assets/looks/look_12_Notte_Blu.jpg" alt="Cinema camera con il look Notte Blu" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">12</span><span class="look__nome">Notte Blu</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="verdi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_13_Salvia_Grigia.jpg" alt="Primo piano in bianco e nero con il look Salvia Grigia" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">13</span><span class="look__nome">Salvia Grigia</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="verdi" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_14_Eucalipto.jpg" alt="Set cinematografico con il look Eucalipto" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">14</span><span class="look__nome">Eucalipto</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="verdi">
+          <figure>
+            <img src="assets/looks/look_15_Verde_Muschio.jpg" alt="Ritratto di moda con il look Verde Muschio" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">15</span><span class="look__nome">Verde Muschio</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="verdi">
+          <figure>
+            <img src="assets/looks/look_16_Cedro.jpg" alt="Ritratto di moda con il look Cedro" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">16</span><span class="look__nome">Cedro</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="materici" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_17_Ruggine_Viva.jpg" alt="Ritratto di moda con il look Ruggine Viva" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">17</span><span class="look__nome">Ruggine Viva</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="materici" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_18_Corallo_Antico.jpg" alt="Ritratto di moda con il look Corallo Antico" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">18</span><span class="look__nome">Corallo Antico</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="materici">
+          <figure>
+            <img src="assets/looks/look_19_Bordeaux.jpg" alt="Ritratto di moda con il look Bordeaux" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">19</span><span class="look__nome">Bordeaux</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="materici" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_20_Seta_Calda.jpg" alt="Ritratto di moda con il look Seta Calda" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">20</span><span class="look__nome">Seta Calda</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="materici">
+          <figure>
+            <img src="assets/looks/look_21_Cipria.jpg" alt="Ritratto di moda con il look Cipria" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">21</span><span class="look__nome">Cipria</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="elettrici" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_22_Indaco_Elettrico.jpg" alt="Cinema camera con il look Indaco Elettrico" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">22</span><span class="look__nome">Indaco Elettrico</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="elettrici">
+          <figure>
+            <img src="assets/looks/look_23_Magenta_Laser.jpg" alt="Primo piano di moda con il look Magenta Laser" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">23</span><span class="look__nome">Magenta Laser</span></figcaption>
+          </figure>
+        </li>
+        <li class="look__voce" data-famiglia="elettrici" data-incluso="si">
+          <figure>
+            <img src="assets/looks/look_24_Grafite.jpg" alt="Ritratto in bianco e nero con il look Grafite" width="640" height="800" loading="lazy" />
+            <figcaption><span class="look__num">24</span><span class="look__nome">Grafite</span><span class="look__badge">in app</span></figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <div class="look__azione">
+        <div>
+          <h3 class="display-3">Tutti e ventiquattro, in un file.</h3>
+          <p>
+            LUT 3D 17³ in formato <code>.cube</code>, con licenza d'uso libero
+            anche per lavori commerciali. Non è consentito rivendere la raccolta
+            come prodotto a sé.
+          </p>
+        </div>
+        <a class="bottone bottone--scuro" href="downloads/Franchetti_Arts_Serie_Lab.zip" download>
+          Scarica la Serie Lab
+          <span>ZIP · 975 KB · 24 look</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================== guida -->
+  <section class="sezione sezione--carta2" id="come-funziona" aria-labelledby="titolo-guida">
+    <div class="contenitore">
+      <div class="guida-teaser">
+        <figure class="guida-teaser__immagine rivela">
+          <img src="assets/vetrina/editoriale.jpg"
+               alt="Ritratto editoriale di moda con il look Ruggine Viva."
+               width="1000" height="1250" loading="lazy" />
+          <figcaption>
+            <span>Ruggine Viva · 80%</span>
+            Una LUT non è un filtro: è una mappa di colore che puoi salvare,
+            confrontare e ripetere.
+          </figcaption>
+        </figure>
+
+        <div class="guida-teaser__testo">
+          <p class="occhiello">La guida</p>
+          <h2 class="display-2" id="titolo-guida">Dal file alla consegna,<br /><em>senza indovinare.</em></h2>
+          <p class="guida-teaser__intro">
+            Sei passaggi, scritti per esteso: requisiti, installazione del
+            certificato, interfaccia, copia del look, applicazione in serie e uso
+            dei <code>.cube</code> negli altri programmi.
+          </p>
+
+          <ol class="passi-guida" role="list">
+            <li>
+              <span class="passi-guida__num">01</span>
+              <div><h3>Requisiti e download</h3><p>Cosa serve, cosa contiene il pacchetto, come verificarlo.</p></div>
+            </li>
+            <li>
+              <span class="passi-guida__num">02</span>
+              <div><h3>Installazione</h3><p>Il certificato di sviluppo, l'MSIX, il primo avvio.</p></div>
+            </li>
+            <li>
+              <span class="passi-guida__num">03</span>
+              <div><h3>L'interfaccia</h3><p>Riferimento, intensità, anteprima, registro, cartella di uscita.</p></div>
+            </li>
+            <li>
+              <span class="passi-guida__num">04</span>
+              <div><h3>Copia look</h3><p>Dalla fotografia che ti piace a un <code>.cube</code> riutilizzabile.</p></div>
+            </li>
+            <li>
+              <span class="passi-guida__num">05</span>
+              <div><h3>Applica e conserva</h3><p>Una o cento immagini, in JPEG, con i dati EXIF al loro posto.</p></div>
+            </li>
+            <li>
+              <span class="passi-guida__num">06</span>
+              <div><h3>Fuori dall'app</h3><p>Photoshop, Premiere, Resolve, Affinity, Final Cut: dove mettere i file.</p></div>
+            </li>
+          </ol>
+
+          <a class="bottone bottone--scuro" href="guida.html">
+            Apri la guida completa
+            <span>11 capitoli · passo per passo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================ cinema -->
+  <section class="fascia" aria-labelledby="titolo-fascia">
+    <div class="fascia__fondo" aria-hidden="true">
+      <img src="assets/vetrina/set-cinema.jpg" alt="" width="1800" height="760" loading="lazy" />
+    </div>
+    <div class="fascia__velo" aria-hidden="true"></div>
+    <div class="contenitore fascia__testo">
+      <p class="occhiello occhiello--chiaro">Moda e cinema</p>
+      <blockquote class="display-2" id="titolo-fascia">Sul set, il colore<br /><em>è una decisione.</em></blockquote>
+      <p>
+        La differenza tra una fotografia e una serie è la ripetibilità:
+        la stessa LUT, la stessa intensità, lo stesso punto di partenza.
+        Franchetti Lab serve a questo.
+      </p>
+      <a class="collegamento-freccia" href="guida.html#moda-cinema">Metodo per moda e cinema <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- ================================================================ scarica -->
+  <section class="sezione sezione--scura" id="scarica" aria-labelledby="titolo-scarica">
+    <div class="contenitore">
+      <div class="testata-sezione testata-sezione--divisa">
+        <div class="testata-sezione__titolo">
+          <p class="occhiello">Download</p>
+          <h2 class="display-2" id="titolo-scarica">Due file.<br /><em>Nient'altro.</em></h2>
+        </div>
+        <div class="testata-sezione__nota">
+          <p>
+            Il programma e la raccolta dei look. Gratuiti, senza account,
+            senza pubblicità e senza passaggi intermedi.
+          </p>
+        </div>
+      </div>
+
+      <div class="download">
+        <article class="scheda-scarica">
+          <div class="scheda-scarica__testa">
+            <p class="scheda-scarica__tipo">Programma</p>
+            <span class="versione">0.1.0</span>
+          </div>
+          <h3>Franchetti Lab</h3>
+          <p class="scheda-scarica__frase">
+            Copia look, Applica LUT, dodici look inclusi e lavoro su cartelle.
+          </p>
+          <dl class="dettagli">
+            <div><dt>Formato</dt><dd>MSIX · 64 bit</dd></div>
+            <div><dt>Dimensione</dt><dd>45 MB</dd></div>
+            <div><dt>Sistema</dt><dd>Windows 10 / 11</dd></div>
+            <div><dt>Prezzo</dt><dd>Gratuito</dd></div>
+          </dl>
+          <a class="bottone bottone--pieno bottone--largo" href="downloads/FranchettiLab_0.1.0.0_x64.msix" download>
+            Scarica il programma
+            <span>franchettilab_0.1.0.0_x64.msix</span>
+          </a>
+          <p class="scheda-scarica__piede">
+            La build è firmata con un certificato di sviluppo: prima del primo
+            avvio va reso attendibile una volta sola.
+            <a href="guida.html#installazione">Quattro passaggi nella guida</a>.
+          </p>
+        </article>
+
+        <article class="scheda-scarica">
+          <div class="scheda-scarica__testa">
+            <p class="scheda-scarica__tipo">Look</p>
+            <span class="versione">24 file</span>
+          </div>
+          <h3>Franchetti Arts · Serie Lab</h3>
+          <p class="scheda-scarica__frase">
+            La raccolta completa in <code>.cube</code>, utilizzabile anche in
+            altri programmi che leggono le LUT 3D.
+          </p>
+          <dl class="dettagli">
+            <div><dt>Formato</dt><dd>ZIP · 24 LUT 3D 17³</dd></div>
+            <div><dt>Dimensione</dt><dd>975 KB</dd></div>
+            <div><dt>Licenza</dt><dd>Uso libero, anche commerciale</dd></div>
+            <div><dt>Prezzo</dt><dd>Gratuito</dd></div>
+          </dl>
+          <a class="bottone bottone--contorno bottone--largo" href="downloads/Franchetti_Arts_Serie_Lab.zip" download>
+            Scarica i 24 look
+            <span>franchetti_arts_serie_lab.zip</span>
+          </a>
+          <p class="scheda-scarica__piede">
+            Nel pacchetto: i 24 file <code>.cube</code>, l'elenco dei look e la
+            licenza d'uso. Dodici sono già dentro l'app.
+          </p>
+        </article>
+      </div>
+
+      <div class="requisiti">
+        <div class="requisiti__voce">
+          <h3>Sistema</h3>
+          <p>Windows 10 (1809 o successivo) e Windows 11, a 64 bit. Circa 100 MB su disco dopo l'installazione.</p>
+        </div>
+        <div class="requisiti__voce">
+          <h3>Legge</h3>
+          <p>RAW: ARW, CR2, CR3, NEF, NRW, RAF, DNG, ORF, RW2, PEF, SRW, RWL, 3FR, ERF, MEF, RAW. Immagini: JPEG, PNG, TIFF, WEBP, BMP.</p>
+        </div>
+        <div class="requisiti__voce">
+          <h3>Scrive</h3>
+          <p>JPEG qualità 92 progressivo, profilo sRGB, orientamento corretto; EXIF conservati. Look esportabili in <code>.cube</code> 17³.</p>
+        </div>
+        <div class="requisiti__voce">
+          <h3>Privacy</h3>
+          <p>Nessun server, nessun account, nessuna statistica. Le immagini restano nelle cartelle che scegli. <a href="privacy.html">Informativa</a>.</p>
+        </div>
+      </div>
+
+      <p class="nota-privato">
+        <strong>Le fotografie non escono dal computer.</strong>
+        L'elaborazione è interamente locale: l'app non contatta alcun servizio,
+        nemmeno per controllare gli aggiornamenti.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================================ domande -->
+  <section class="sezione" id="domande" aria-labelledby="titolo-domande">
+    <div class="contenitore contenitore--stretto">
+      <div class="testata-sezione">
+        <p class="occhiello">Domande frequenti</p>
+        <h2 class="display-2" id="titolo-domande">Le risposte, prima<br /><em>delle domande.</em></h2>
+      </div>
+
+      <div class="domande">
+        <details>
+          <summary>Serve la connessione a internet?</summary>
+          <p>No. Dopo il download l'app funziona completamente offline. La connessione serve solo per scaricare il pacchetto e i look.</p>
+        </details>
+        <details>
+          <summary>Le mie fotografie vengono caricate da qualche parte?</summary>
+          <p>No. Non esistono server o account collegati: le immagini vengono lette e scritte solo nelle cartelle che scegli. Il programma non invia statistiche.</p>
+        </details>
+        <details>
+          <summary>Che differenza c'è tra la 0.1 e la versione precedente?</summary>
+          <p>La 0.1 è la prima versione pubblica di Franchetti Lab. Introduce Copia look, Applica LUT e la serie Franchetti Arts · Serie Lab. Non è un aggiornamento di Franchetti Raw Converter Pro: è un programma distinto, dedicato ai look.</p>
+        </details>
+        <details>
+          <summary>Le LUT funzionano in Lightroom, Photoshop o DaVinci Resolve?</summary>
+          <p>Sì, nei programmi che importano LUT 3D in formato <code>.cube</code>. La guida spiega dove mettere i file in Photoshop, Premiere Pro, DaVinci Resolve, Affinity Photo e Final Cut Pro, e chiarisce il caso di Lightroom Classic, che lavora con profili <code>.xmp</code>.</p>
+        </details>
+        <details>
+          <summary>Posso usare i look per lavori commerciali?</summary>
+          <p>Sì. La licenza consente l'uso libero, anche commerciale, senza royalty. Non è consentito rivendere la raccolta come prodotto a sé o redistribuirla come se fosse propria.</p>
+        </details>
+        <details>
+          <summary>Perché serve un certificato per installare?</summary>
+          <p>Il pacchetto è un MSIX firmato con un certificato di sviluppo, non con un certificato pubblico. Windows chiede di rendere attendibile quel certificato una volta sola, prima di installare. La pubblicazione sul Microsoft Store è in programma.</p>
+        </details>
+        <details>
+          <summary>Cosa succede se cambio computer?</summary>
+          <p>I look sono file <code>.cube</code>: puoi salvarli, copiarli e riaprirli su qualsiasi altra macchina, dentro o fuori Franchetti Lab. Il programma si installa di nuovo con lo stesso pacchetto.</p>
+        </details>
+      </div>
+
+      <p class="domande__chiusura">
+        Non trovi la risposta?
+        <a href="mailto:reportage@libero.it">Scrivi a reportage@libero.it</a>
+        oppure leggi la <a href="guida.html">guida completa</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede__testa">
+      <a class="marchio marchio--piede" href="index.html" aria-label="Franchetti Lab, torna all'inizio">
+        <svg class="marchio__segno" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="13.4" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <polygon points="20,12.6 26.4,16.3 26.4,23.7 20,27.4 13.6,23.7 13.6,16.3" fill="currentColor" opacity=".9" />
+          <path d="M20 20 20 6.6M20 20 31.6 26.7M20 20 8.4 26.7" stroke="currentColor" stroke-width="1.1" />
+        </svg>
+        <span class="marchio__testo">
+          <strong>Franchetti Lab</strong>
+          <small>Suite di strumenti per fotografi</small>
+        </span>
+      </a>
+      <p class="piede__frase">
+        Un riferimento. Tutta la serie.
+      </p>
+    </div>
+
+    <div class="piede__colonne">
+      <nav aria-label="Sito">
+        <h2>Il programma</h2>
+        <a href="#novita">Novità 0.1</a>
+        <a href="#confronti">Confronti</a>
+        <a href="#look">I 24 look</a>
+        <a href="#scarica">Download</a>
+        <a href="guida.html">Guida</a>
+      </nav>
+      <nav aria-label="Informazioni">
+        <h2>Informazioni</h2>
+        <a href="crediti.html">Crediti fotografici</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:reportage@libero.it">reportage@libero.it</a>
+      </nav>
+      <div class="piede__nota">
+        <h2>Versione</h2>
+        <p>0.1.0 · Windows 10 e 11<br />MSIX 64 bit · LUT 17³</p>
+        <p>Gratuito. Nessun account, nessun tracciamento.</p>
+      </div>
+    </div>
+
+    <div class="piede__legale">
+      <p>© <span id="anno">2026</span> Franchetti. Tutti i diritti riservati.</p>
+      <p>
+        Windows è un marchio di Microsoft Corporation. Questo sito non è
+        affiliato a Microsoft. Fotografie dimostrative con licenze libere:
+        <a href="crediti.html">crediti</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

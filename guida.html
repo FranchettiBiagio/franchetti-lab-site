@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guida — Franchetti Lab 0.1</title>
+<meta name="description" content="Guida completa a Franchetti Lab 0.1: installazione del certificato e dell'MSIX, interfaccia, Copia look, Applica LUT, uso dei file .cube in Photoshop, Premiere, Resolve, consigli per moda e cinema." />
+<meta name="theme-color" content="#f4efe5" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Guida — Franchetti Lab 0.1" />
+<meta property="og:description" content="Dall'installazione alla consegna: ogni passaggio di Franchetti Lab, per esteso." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta property="og:locale" content="it_IT" />
+<link rel="preload" href="assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="pagina-interna pagina-guida">
+
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata testata--solida" id="testata">
+  <div class="testata__interna">
+    <a class="marchio" href="index.html" aria-label="Franchetti Lab, torna al sito">
+      <svg class="marchio__segno" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle cx="20" cy="20" r="13.4" fill="none" stroke="currentColor" stroke-width="1.1" />
+        <polygon points="20,12.6 26.4,16.3 26.4,23.7 20,27.4 13.6,23.7 13.6,16.3" fill="currentColor" opacity=".9" />
+        <path d="M20 20 20 6.6M20 20 31.6 26.7M20 20 8.4 26.7" stroke="currentColor" stroke-width="1.1" />
+      </svg>
+      <span class="marchio__testo">
+        <strong>Franchetti Lab</strong>
+        <small>Suite di strumenti per fotografi</small>
+      </span>
+    </a>
+
+    <button class="menu__bottone" id="menuBottone" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+      <span class="solo-lettori">Apri il menu</span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Collegamenti">
+      <a href="index.html">Sito</a>
+      <a href="index.html#novita">Novità 0.1</a>
+      <a href="index.html#look">Look</a>
+      <a href="index.html#scarica">Download</a>
+      <a class="menu__cta" href="index.html#scarica">Scarica 0.1</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto">
+
+  <section class="apertura-interna" aria-labelledby="titolo-guida">
+    <div class="contenitore">
+      <p class="occhiello">Guida · versione 0.1</p>
+      <div class="apertura-interna__griglia">
+        <h1 class="display" id="titolo-guida">Dalla reference<br /><em>alla serie.</em></h1>
+        <p class="apertura-interna__nota">
+          <strong>Ogni passaggio, per esteso.</strong>
+          Installazione, interfaccia, copia del look, elaborazione in serie e
+          uso dei file <code>.cube</code> fuori dall'app. Con le cose che di
+          solito nessuno spiega: il certificato, lo spazio colore, l'intensità.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="contenitore">
+    <div class="guida-griglia">
+      <nav class="indice" aria-label="Indice della guida">
+        <p class="indice__titolo">Indice</p>
+        <a href="#requisiti"><span>01</span> Prima di scaricare</a>
+        <a href="#installazione"><span>02</span> Installazione</a>
+        <a href="#interfaccia"><span>03</span> L'interfaccia</a>
+        <a href="#copia-look"><span>04</span> Copia look</a>
+        <a href="#applica-lut"><span>05</span> Applica LUT</a>
+        <a href="#look"><span>06</span> I 24 look</a>
+        <a href="#fuori-app"><span>07</span> Fuori dall'app</a>
+        <a href="#moda-cinema"><span>08</span> Moda e cinema</a>
+        <a href="#problemi"><span>09</span> Problemi</a>
+        <a href="#glossario"><span>10</span> Glossario</a>
+        <a href="#privacy-licenza"><span>11</span> Privacy e licenza</a>
+      </nav>
+
+      <article class="guida-articolo">
+
+        <p>
+          Franchetti Lab è un programma per Windows che lavora sui look.
+          Non è un editor completo e non prova a esserlo: prende una fotografia
+          di riferimento, ne ricava una LUT 3D, e applica quella LUT a una o a
+          molte immagini. In alternativa applica un file <code>.cube</code> che
+          hai già, oppure uno dei dodici look inclusi.
+        </p>
+        <p>
+          Questa guida è scritta per essere usata davvero: prima si installa,
+          poi si prova, poi si capisce perché. I passaggi tecnici sono separati
+          dai consigli di metodo, così puoi tornare a cercare solo quello che
+          ti serve.
+        </p>
+
+        <div class="guida-sommario">
+          <h2>In breve</h2>
+          <ol>
+            <li>Scarica il programma e, se vuoi, il pacchetto dei 24 look.</li>
+            <li>Rendi attendibile il certificato di sviluppo, una volta sola.</li>
+            <li>Apri il file MSIX e installa.</li>
+            <li>Scegli un riferimento o una LUT, regola l'intensità, elabora.</li>
+          </ol>
+        </div>
+
+        <!-- 01 ------------------------------------------------------------ -->
+        <h2 id="requisiti"><span class="num">01</span> Prima di scaricare</h2>
+
+        <h3>Cosa serve</h3>
+        <ul>
+          <li><strong>Windows 10</strong> (versione 1809 o successiva) oppure <strong>Windows 11</strong>, a 64 bit.</li>
+          <li>Circa <strong>100 MB</strong> liberi dopo l'installazione, più lo spazio per le fotografie elaborate.</li>
+          <li>Nessuna connessione dopo il download: il programma non chiama casa.</li>
+          <li>Nessun account, nessuna chiave, nessuna attivazione.</li>
+        </ul>
+
+        <h3>I due download</h3>
+        <p>
+          Nella sezione <a href="index.html#scarica">Download</a> ci sono due
+          file. Sono gli unici necessari:
+        </p>
+        <ul>
+          <li>
+            <strong>Franchetti Lab 0.1.0 (MSIX, 45 MB)</strong> — il programma.
+            Contiene Copia look, Applica LUT e i dodici look inclusi.
+          </li>
+          <li>
+            <strong>Franchetti Arts · Serie Lab (ZIP, 975 KB)</strong> — tutte e
+            ventiquattro le LUT in formato <code>.cube</code>, utilizzabili
+            anche in altri programmi.
+          </li>
+        </ul>
+        <p>
+          Per l'installazione serve anche il <strong>certificato pubblico</strong>
+          del pacchetto: è un file di 780 byte, non un programma. Il link è nel
+          capitolo successivo. Non va installato come applicazione: va reso
+          attendibile una volta sola.
+        </p>
+
+        <h3>Verificare i file</h3>
+        <p>
+          Se vuoi controllare che il download sia integro, confronta l'impronta
+          SHA-256. In PowerShell:
+        </p>
+        <p><code>Get-FileHash .\FranchettiLab_0.1.0.0_x64.msix -Algorithm SHA256</code></p>
+        <table class="tabella">
+          <thead>
+            <tr><th>File</th><th>Dimensione</th><th>SHA-256</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MSIX</td>
+              <td>46.743.176 byte</td>
+              <td><code>0DF279A06E3DB4A8BC1457E447A319511751E245FE133525A0D801FB1C17FB8F</code></td>
+            </tr>
+            <tr>
+              <td>ZIP look</td>
+              <td>998.576 byte</td>
+              <td><code>E35F7CDC34662E02F835E713D516C09B0BEE1836592BE9CD069EFF6395E59406</code></td>
+            </tr>
+          </tbody>
+          <caption>Impronte della versione 0.1.0, novembre 2026.</caption>
+        </table>
+
+        <div class="avviso avviso--neutro">
+          <span class="avviso__titolo">Stato della pubblicazione</span>
+          <p>
+            La versione 0.1.0 è distribuita come pacchetto MSIX firmato con un
+            certificato di sviluppo. La pubblicazione sul Microsoft Store è
+            <strong>in programma</strong>, non ancora attiva. Quando sarà
+            disponibile, l'installazione non richiederà il passaggio sul
+            certificato.
+          </p>
+        </div>
+
+        <!-- 02 ------------------------------------------------------------ -->
+        <h2 id="installazione"><span class="num">02</span> Installazione</h2>
+
+        <p>
+          Windows accetta solo pacchetti firmati da un certificato di cui si
+          fida. Il nostro è un certificato di sviluppo, emesso a nome
+          <strong>FranchettiAcademy</strong>: non è un'autorità pubblica, quindi
+          va reso attendibile sul tuo computer. È un passaggio una volta sola.
+        </p>
+
+        <h3>Passo 1 — Scarica il certificato</h3>
+        <p>
+          Scarica
+          <a href="downloads/FranchettiLab_certificato.cer" download>FranchettiLab_certificato.cer</a>
+          (780 byte). Non aprirlo con l'editor: usalo con un doppio clic.
+        </p>
+
+        <h3>Passo 2 — Installalo in “Persone attendibili”</h3>
+        <ol class="passi-numerati">
+          <li><strong>Apri il file.</strong> Compare la finestra <em>Certificato</em>. Scegli <em>Installa certificato</em>.</li>
+          <li><strong>Computer locale.</strong> Seleziona <em>Computer locale</em> e premi <em>Avanti</em>. Se Windows chiede il consenso, conferma.</li>
+          <li><strong>Collocazione manuale.</strong> Scegli <em>Colloca tutti i certificati nel seguente archivio</em>, premi <em>Sfoglia</em> e seleziona <em>Persone attendibili</em>.</li>
+          <li><strong>Fine.</strong> Conferma con <em>Avanti</em>, poi <em>Fine</em>. Windows risponde che l'importazione è riuscita.</li>
+        </ol>
+
+        <div class="avviso">
+          <span class="avviso__titolo">Attenzione</span>
+          <p>
+            Se scegli un archivio diverso da <em>Persone attendibili</em>,
+            l'installazione può fallire con l'errore <code>0x800B0109</code>.
+            In quel caso ripeti il passaggio e controlla l'archivio.
+          </p>
+        </div>
+
+        <h3>Passo 3 — Installa il programma</h3>
+        <p>
+          Fai doppio clic su <code>FranchettiLab_0.1.0.0_x64.msix</code> e premi
+          <em>Installa</em>. Al termine, Franchetti Lab compare nel menu Start
+          con il suo nome. Non serve altro: nessun runtime da scaricare, nessun
+          account da creare.
+        </p>
+
+        <h3>In alternativa: PowerShell</h3>
+        <p>
+          Se preferisci la riga di comando, dopo aver importato il certificato:
+        </p>
+        <p><code>Add-AppxPackage -Path .\FranchettiLab_0.1.0.0_x64.msix</code></p>
+        <p>
+          Il comando va eseguito nella cartella del file. Non serve eseguirlo
+          come amministratore: l'installazione è per l'utente corrente.
+        </p>
+
+        <h3>Se compare un avviso di Windows</h3>
+        <p>
+          SmartScreen può segnalare il file perché il certificato non è emesso
+          da un'autorità pubblica. È il comportamento atteso per una build di
+          sviluppo. Prima di procedere, controlla che il certificato riporti
+          <strong>FranchettiAcademy</strong> e che l'impronta del file
+          corrisponda a quella pubblicata qui sopra.
+        </p>
+
+        <h3>Aggiornare o disinstallare</h3>
+        <p>
+          Per aggiornare, installa il pacchetto più recente sopra quello
+          esistente: l'identità dell'app resta la stessa e le preferenze
+          vengono conservate. Per rimuoverla, usa <em>Impostazioni → App →
+          App installate</em> e scegli <em>Disinstalla</em>.
+        </p>
+
+        <!-- 03 ------------------------------------------------------------ -->
+        <h2 id="interfaccia"><span class="num">03</span> L'interfaccia</h2>
+
+        <p>
+          La finestra è divisa in due colonne. A sinistra scegli il look e le
+          immagini; a destra vedi il riferimento, il confronto e il registro.
+          In basso ci sono la cartella di uscita e il pulsante <em>Elabora</em>.
+        </p>
+
+        <figure class="figura-annotata">
+          <div class="figura-annotata__contenitore">
+            <img src="assets/lab-copia-look.png"
+                 alt="La finestra di Franchetti Lab con la scheda Copia look: riferimento, elenco immagini, anteprima prima e dopo, registro e pulsante Elabora."
+                 width="1508" height="937" loading="lazy" />
+            <span class="figura-annotata__punto" style="--x: 18%; --y: 26%;">1</span>
+            <span class="figura-annotata__punto" style="--x: 50%; --y: 32%;">2</span>
+            <span class="figura-annotata__punto" style="--x: 19%; --y: 63%;">3</span>
+            <span class="figura-annotata__punto" style="--x: 14%; --y: 84%;">4</span>
+            <span class="figura-annotata__punto" style="--x: 74%; --y: 52%;">5</span>
+            <span class="figura-annotata__punto" style="--x: 90.5%; --y: 93%;">6</span>
+          </div>
+          <figcaption>
+            <span>Fig. 01</span>
+            La schermata Copia look. I numeri corrispondono al legenda qui sotto.
+          </figcaption>
+        </figure>
+
+        <ol class="legenda-figura">
+          <li><strong>Schede del look.</strong> <em>Copia look</em> per partire da una fotografia, <em>File .cube</em> per aprire una LUT, <em>Inclusi</em> per i dodici look dell'app.</li>
+          <li><strong>Riferimento.</strong> L'immagine da cui viene ricavato il look. Resta visibile anche dopo aver scelto le foto da elaborare.</li>
+          <li><strong>Intensità.</strong> Da 0 a 100%. A 0 non cambia nulla; a 100 si applica tutta la LUT.</li>
+          <li><strong>Immagini da elaborare.</strong> Aggiungi file singoli o un'intera cartella. <em>Svuota</em> azzera l'elenco, non i file.</li>
+          <li><strong>Prima / Dopo.</strong> L'anteprima dell'immagine selezionata nell'elenco, con il look corrente.</li>
+          <li><strong>Cartella di uscita ed Elabora.</strong> Destinazione dei JPEG e avvio del lavoro. Il percorso viene ricordato alla riapertura.</li>
+        </ol>
+
+        <p>
+          La cartella predefinita è <code>Immagini\FranchettiLab</code>. Puoi
+          cambiarla con <em>Cartella uscita</em>. Le impostazioni minime
+          (cartella di uscita) vengono salvate nella cartella di configurazione
+          dell'utente, non nel sito e non su un server.
+        </p>
+
+        <div class="avviso avviso--neutro">
+          <span class="avviso__titolo">Consiglio</span>
+          <p>
+            Lavora sempre su una copia o su una cartella di uscita separata.
+            Franchetti Lab non modifica gli originali, ma tenere i file di
+            partenza distinti rende più semplice confrontare e tornare indietro.
+          </p>
+        </div>
+
+        <!-- 04 ------------------------------------------------------------ -->
+        <h2 id="copia-look"><span class="num">04</span> Copia look</h2>
+
+        <p>
+          <strong>Copia look</strong> non copia i pixel della fotografia di
+          riferimento. Ne analizza tono, bilanciamento, saturazione e contrasto,
+          costruisce un modello in spazio <strong>Oklab</strong>, lo converte in
+          una LUT 3D da <strong>17³</strong> punti e applica quella LUT alle
+          immagini scelte. È per questo che il risultato funziona anche su
+          soggetti e inquadrature diverse.
+        </p>
+
+        <h3>Scegliere un buon riferimento</h3>
+        <ul>
+          <li>Scegli una fotografia con un'esposizione corretta: né bruciata né troppo scura.</li>
+          <li>Preferisci una luce simile a quella della serie da elaborare. Un ritratto in studio non è un buon riferimento per un esterno in controluce.</li>
+          <li>Evita immagini con filtri già molto forti o con una dominante netta: la dominante verrebbe trasferita.</li>
+          <li>Per la moda, controlla la pelle: è la prima cosa che tradisce un look troppo aggressivo.</li>
+        </ul>
+
+        <h3>Procedura</h3>
+        <ol class="passi-numerati">
+          <li><strong>Apri la scheda Copia look.</strong> Premi <em>Scegli foto di riferimento…</em> e seleziona il file. Sono accettati JPEG, PNG, TIFF, WEBP, BMP e i 16 formati RAW supportati.</li>
+          <li><strong>Guarda il riferimento.</strong> Compare in alto a destra con il nome del file. Il look viene costruito subito.</li>
+          <li><strong>Regola l'intensità.</strong> Parti da 100% per vedere l'effetto pieno, poi scendi fino al punto in cui la pelle e le luci restano credibili. Sui look caldi, 60–80% è spesso il punto giusto.</li>
+          <li><strong>Aggiungi le immagini.</strong> Con <em>Aggiungi file…</em> o <em>Cartella…</em>. L'anteprima mostra la prima immagine selezionata.</li>
+          <li><strong>Controlla il confronto.</strong> Seleziona le voci dell'elenco per vedere Prima e Dopo. Il registro in basso riporta ciò che sta accadendo.</li>
+          <li><strong>Elabora.</strong> Scegli la cartella di uscita e premi <em>Elabora</em>. Il programma scrive un JPEG per ogni immagine, con lo stesso nome del file di partenza.</li>
+        </ol>
+
+        <h3>Salvare il look</h3>
+        <p>
+          Con <em>Salva il look come LUT .cube</em> esporti il look appena
+          costruito. Il file è una LUT 3D 17³, con dominio 0–1 e valori sRGB:
+          puoi riaprirlo in Franchetti Lab, nel tuo programma di fotoritocco o
+          in una pipeline video. È il modo più semplice per portare un look da
+          un computer all'altro senza dipendere dall'app.
+        </p>
+
+        <div class="avviso">
+          <span class="avviso__titolo">Cosa non fa</span>
+          <p>
+            Non corregge l'esposizione, non rimuove oggetti, non ricostruisce
+            dettagli. È uno strumento di colore: se la fotografia di partenza è
+            sottoesposta o fuori fuoco, la LUT non la salva. Conviene sistemare
+            prima esposizione e bilanciamento del bianco, poi applicare il look.
+          </p>
+        </div>
+
+        <!-- 05 ------------------------------------------------------------ -->
+        <h2 id="applica-lut"><span class="num">05</span> Applica LUT</h2>
+
+        <p>
+          La scheda <strong>File .cube</strong> applica una LUT 3D che hai già.
+          La scheda <strong>Inclusi</strong> mostra i dodici look della Serie
+          Lab già dentro l'app. In entrambi i casi il flusso è lo stesso:
+          scegli il look, regola l'intensità, aggiungi le immagini, elabora.
+        </p>
+
+        <figure>
+          <img src="assets/lab-inclusi.png"
+               alt="Scheda Inclusi di Franchetti Lab con l'elenco dei dodici look e l'anteprima prima e dopo."
+               width="1508" height="937" loading="lazy" />
+          <figcaption><span>Fig. 02</span> I dodici look inclusi. Il confronto si aggiorna quando selezioni un'immagine o cambi intensità.</figcaption>
+        </figure>
+
+        <h3>Formato accettato</h3>
+        <ul>
+          <li>LUT 3D in formato Adobe Cube (<code>.cube</code>).</li>
+          <li>Dominio <strong>0–1</strong> e valori pensati per <strong>sRGB</strong>.</li>
+          <li>Qualsiasi dimensione dichiarata da <code>LUT_3D_SIZE</code>: 17³, 33³ o altra.</li>
+        </ul>
+        <p>
+          Le LUT scritte per spazi logaritmici (per esempio LogC o S-Log) non
+          vanno applicate direttamente: vanno convertite nello spazio giusto
+          dal programma che le usa. Franchetti Lab non interpreta
+          <code>DOMAIN_MIN</code> e <code>DOMAIN_MAX</code> diversi da 0–1.
+        </p>
+
+        <h3>L'intensità</h3>
+        <p>
+          L'intensità è un'interpolazione lineare tra l'immagine originale e il
+          risultato della LUT. A 50% il risultato è a metà strada, non “metà
+          effetto” in senso percettivo. Per questo due look diversi possono
+          richiedere percentuali diverse per sembrare ugualmente presenti.
+        </p>
+        <p>
+          Regola pratica: guarda prima la pelle, poi le luci, poi il colore
+          dominante. Se la pelle diventa arancione o grigia, scendi. Se le luci
+          si chiudono, scendi. Se il look scompare, sali.
+        </p>
+
+        <h3>Elaborazione in serie</h3>
+        <p>
+          Puoi aggiungere singoli file o un'intera cartella. Il programma
+          elabora in sequenza, mostra l'avanzamento e scrive nel registro
+          l'esito di ogni immagine. Se un file non è leggibile, l'errore viene
+          segnalato senza interrompere il resto della coda.
+        </p>
+
+        <figure>
+          <img src="assets/lab-elaborazione.png"
+               alt="Elaborazione completata di due immagini, con il registro delle operazioni e il tempo impiegato."
+               width="1600" height="956" loading="lazy" />
+          <figcaption><span>Fig. 03</span> Al termine il registro riporta i file scritti, gli eventuali errori e la durata. La cartella di uscita resta visibile in basso.</figcaption>
+        </figure>
+
+        <h3>Cosa viene scritto</h3>
+        <ul>
+          <li>Un file <strong>JPEG</strong> per ogni immagine, qualità 92, progressivo.</li>
+          <li>Profilo colore <strong>sRGB</strong> incorporato.</li>
+          <li>Orientamento corretto e <strong>EXIF</strong> conservati quando il file di partenza li contiene.</li>
+          <li>Se il nome di uscita coinciderebbe con quello di partenza, viene aggiunto il suffisso <code>_lab</code>.</li>
+        </ul>
+        <p>
+          I RAW vengono letti con il bilanciamento del bianco della fotocamera e
+          senza aumentare la luminosità automaticamente: è normale che
+          l'anteprima di un RAW appaia più scura o più piatta del JPEG della
+          fotocamera. Il file finale è comunque un JPEG, non un RAW sviluppato.
+        </p>
+
+        <!-- 06 ------------------------------------------------------------ -->
+        <h2 id="look"><span class="num">06</span> I 24 look</h2>
+
+        <p>
+          La serie <strong>Franchetti Arts · Serie Lab</strong> è composta da
+          ventiquattro LUT nuove, divise in cinque famiglie. Dodici sono incluse
+          nell'app; tutte e ventiquattro sono nel pacchetto ZIP.
+        </p>
+
+        <table class="tabella">
+          <thead>
+            <tr><th>Famiglia</th><th>Look</th><th>Nell'app</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Caldi</td>
+              <td>Ambra Toscana, Miele di Castagno, Terracotta, Ocra, Arancio Bruciato, Sabbia Chiara</td>
+              <td>01, 02, 03</td>
+            </tr>
+            <tr>
+              <td>Freddi</td>
+              <td>Cobalto Profondo, Blu Ghiaccio, Lavanda, Petrolio, Nebbia Alta, Notte Blu</td>
+              <td>07, 11</td>
+            </tr>
+            <tr>
+              <td>Verdi</td>
+              <td>Salvia Grigia, Eucalipto, Verde Muschio, Cedro</td>
+              <td>13, 14</td>
+            </tr>
+            <tr>
+              <td>Materici</td>
+              <td>Ruggine Viva, Corallo Antico, Bordeaux, Seta Calda, Cipria</td>
+              <td>17, 18, 20</td>
+            </tr>
+            <tr>
+              <td>Elettrici</td>
+              <td>Indaco Elettrico, Magenta Laser, Grafite</td>
+              <td>22, 24</td>
+            </tr>
+          </tbody>
+          <caption>La numerazione completa è 01–24; i numeri nella colonna “Nell'app” sono quelli inclusi nel programma.</caption>
+        </table>
+
+        <h3>Come sceglierli</h3>
+        <ul>
+          <li><strong>Caldi</strong> per pelle, set caldi, backstage, luce di tungsteno. Tienili sotto l'80% sui primi piani.</li>
+          <li><strong>Freddi</strong> per notte, pioggia, interni con finestre, scena cinematografica. Notte Blu è volutamente sottile.</li>
+          <li><strong>Verdi</strong> per esterni, vegetazione, uniformi, scene militari o distopiche.</li>
+          <li><strong>Materici</strong> per un look da stampa: ruggine, corallo, bordeaux, pelle.</li>
+          <li><strong>Elettrici</strong> per fashion, musica, ritratti grafici. Grafite è il bianco e nero della serie.</li>
+        </ul>
+
+        <h3>Licenza</h3>
+        <p>
+          Puoi usare i look liberamente, anche in lavori commerciali, modificarli
+          per i tuoi lavori e condividerli insieme a un tuo lavoro lasciando il
+          pacchetto integro. Non puoi venderli come prodotto a sé, redistribuirli
+          come se fossero tuoi o includerli in una raccolta a pagamento. Il testo
+          completo è nel file <code>LICENZA.txt</code> dentro lo ZIP.
+        </p>
+
+        <!-- 07 ------------------------------------------------------------ -->
+        <h2 id="fuori-app"><span class="num">07</span> Fuori dall'app</h2>
+
+        <p>
+          Una LUT <code>.cube</code> è un file di testo: può essere letto da
+          qualsiasi programma che supporti le LUT 3D. Quella che segue è la
+          posizione tipica nei programmi più diffusi. I menu possono cambiare
+          nome con le versioni: cerca la voce “LUT” o “Look”.
+        </p>
+
+        <table class="tabella">
+          <thead>
+            <tr><th>Programma</th><th>Dove si carica</th><th>Note</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Photoshop</td>
+              <td>Livello → Nuovo livello di regolazione → <em>Color Lookup</em> → Carica LUT 3D</td>
+              <td>Funziona su livelli 8 e 16 bit. Applica la LUT a un gruppo se vuoi limitarla.</td>
+            </tr>
+            <tr>
+              <td>Premiere Pro</td>
+              <td>Lumetri Color → Creative → Look → Sfoglia</td>
+              <td>L'intensità si regola con lo slider <em>Intensity</em> di Lumetri.</td>
+            </tr>
+            <tr>
+              <td>DaVinci Resolve</td>
+              <td>Color → LUT → apri la cartella LUT e copia il file, poi selezionalo</td>
+              <td>Verifica che il progetto lavori in sRGB o converti il segnale di conseguenza.</td>
+            </tr>
+            <tr>
+              <td>Affinity Photo</td>
+              <td>Livello → Nuovo livello di regolazione → <em>LUT</em> → Carica</td>
+              <td>Buona compatibilità con i file 17³.</td>
+            </tr>
+            <tr>
+              <td>Final Cut Pro</td>
+              <td>Effects → Custom LUT → Load</td>
+              <td>Controlla lo spazio colore della timeline: la LUT è pensata per sRGB.</td>
+            </tr>
+            <tr>
+              <td>Lightroom Classic</td>
+              <td>Non importa <code>.cube</code> direttamente</td>
+              <td>Lightroom usa profili <code>.xmp</code>. Apri la foto in Photoshop, applica la LUT e torna in Lightroom come TIFF/PSD.</td>
+            </tr>
+          </tbody>
+          <caption>Compatibilità indicata a titolo informativo; i nomi dei programmi appartengono ai rispettivi titolari.</caption>
+        </table>
+
+        <div class="avviso avviso--neutro">
+          <span class="avviso__titolo">Se il risultato è diverso</span>
+          <p>
+            Quasi sempre dipende dallo spazio colore. Una LUT costruita per
+            sRGB, applicata a materiale Log o a un profilo camera diverso,
+            produce un risultato sbagliato. Converti prima, applica dopo; e
+            confronta sempre un fotogramma di prova.
+          </p>
+        </div>
+
+        <!-- 08 ------------------------------------------------------------ -->
+        <h2 id="moda-cinema"><span class="num">08</span> Moda e cinema</h2>
+
+        <p>
+          Moda e cinema hanno lo stesso problema: la coerenza. Un look può
+          essere bellissimo su un fotogramma e sbagliato sul successivo. Il
+          metodo conta più della LUT.
+        </p>
+
+        <h3>Moda: la pelle prima di tutto</h3>
+        <ul>
+          <li>Parti da un riferimento con una luce simile e una pelle simile.</li>
+          <li>Applica il look, poi guarda il viso al 100%: se il colore della pelle non regge, scendi di intensità.</li>
+          <li>Con i look caldi resta tra 60% e 80%; con Grafite puoi arrivare al 100%.</li>
+          <li>Non sommare due LUT. Se serve più carattere, torna al riferimento e ricostruisci il look.</li>
+          <li>Elabora la serie con la stessa intensità: è questo che rende riconoscibile un servizio.</li>
+        </ul>
+
+        <figure class="confronto-blocco">
+          <div class="confronto" data-confronto tabindex="0" role="slider"
+               aria-label="Confronto prima e dopo, look Terracotta al 72 per cento"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--pos: 50%">
+            <img class="confronto__img" src="assets/vetrina/confronto-terracotta-dopo.jpg"
+                 alt="Ritratto di moda con il look Terracotta applicato."
+                 width="1600" height="1050" loading="lazy" />
+            <img class="confronto__img confronto__img--prima" src="assets/vetrina/confronto-terracotta-prima.jpg"
+                 alt="Lo stesso ritratto di moda prima del look Terracotta."
+                 width="1600" height="1050" loading="lazy" />
+            <span class="confronto__etichetta confronto__etichetta--prima">Prima</span>
+            <span class="confronto__etichetta confronto__etichetta--dopo">Dopo</span>
+            <span class="confronto__maniglia" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="confronto__didascalia">
+            <span class="confronto__look">Terracotta · 72%</span>
+            <span class="confronto__nota">Un caldo da studio: la pelle resta naturale, il fondo si scurisce. Trascina per confrontare.</span>
+          </figcaption>
+        </figure>
+
+        <h3>Cinema: la continuità tra i fotogrammi</h3>
+        <ul>
+          <li>Usa lo stesso look e la stessa intensità su tutta la scena, non fotogramma per fotogramma.</li>
+          <li>Controlla le alte luci: una LUT può chiudere il cielo o la finestra più di quanto sembri nell'anteprima piccola.</li>
+          <li>Per gli interni notturni, Notte Blu o Cobalto Profondo al 100% danno un'ombra fredda senza stravolgere la pelle.</li>
+          <li>Se il materiale è Log, non applicare la LUT direttamente: converti prima in sRGB o usa la LUT nel programma che gestisce la trasformazione.</li>
+          <li>Per il backstage e le foto di scena, l'elaborazione in cartella mantiene coerente l'intero reportage.</li>
+        </ul>
+
+        <figure>
+          <img src="assets/vetrina/set-cinema.jpg"
+               alt="Set cinematografico con il look Cobalto Profondo: la troupe al lavoro, ombre fredde e luci contenute."
+               width="1800" height="760" loading="lazy" />
+          <figcaption><span>Fig. 04</span> Cobalto Profondo su un set: le ombre virano al blu, la luce resta leggibile.</figcaption>
+        </figure>
+
+        <h3>Una checklist prima di consegnare</h3>
+        <ol class="passi-numerati">
+          <li><strong>Pelle.</strong> Guardo i visi al 100%: nessuna dominante strana, nessuna chiazza.</li>
+          <li><strong>Luci.</strong> Il bianco non è bruciato e il nero non è tappato.</li>
+          <li><strong>Serie.</strong> Le immagini hanno la stessa temperatura e la stessa intensità.</li>
+          <li><strong>File.</strong> I JPEG sono nella cartella giusta, con i nomi corretti e i metadati attesi.</li>
+          <li><strong>Originali.</strong> Non ho sovrascritto nulla e posso tornare indietro.</li>
+        </ol>
+
+        <!-- 09 ------------------------------------------------------------ -->
+        <h2 id="problemi"><span class="num">09</span> Problemi e soluzioni</h2>
+
+        <table class="tabella">
+          <thead>
+            <tr><th>Sintomo</th><th>Causa probabile</th><th>Soluzione</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Errore 0x800B0109</td>
+              <td>Il certificato non è attendibile</td>
+              <td>Reimporta il <code>.cer</code> in <em>Persone attendibili</em> del computer locale, poi riprova.</td>
+            </tr>
+            <tr>
+              <td>Il pacchetto non si apre</td>
+              <td>Download incompleto o certificato non importato</td>
+              <td>Confronta la dimensione e l'hash; reinstalla il certificato.</td>
+            </tr>
+            <tr>
+              <td>L'app non compare nel menu Start</td>
+              <td>Installazione per un altro utente o non completata</td>
+              <td>Cerca “Franchetti Lab” in Start; se manca, reinstalla con <code>Add-AppxPackage</code>.</td>
+            </tr>
+            <tr>
+              <td>Il look è troppo forte</td>
+              <td>Intensità alta o riferimento troppo contrastato</td>
+              <td>Scendi tra 60% e 80%; scegli un riferimento con luce più simile.</td>
+            </tr>
+            <tr>
+              <td>La pelle diventa arancione</td>
+              <td>Look caldo applicato al 100%</td>
+              <td>Riduci l'intensità e controlla il bilanciamento del bianco prima della LUT.</td>
+            </tr>
+            <tr>
+              <td>I colori non corrispondono in Photoshop</td>
+              <td>Spazio colore o profilo diverso</td>
+              <td>Lavora in sRGB, applica la LUT a un livello e confronta con l'anteprima dell'app.</td>
+            </tr>
+            <tr>
+              <td>Il RAW è più scuro del previsto</td>
+              <td>Lettura senza aumento automatico della luminosità</td>
+              <td>È il comportamento voluto: regola l'esposizione prima di applicare il look.</td>
+            </tr>
+            <tr>
+              <td>Mancano i dati EXIF</td>
+              <td>Il file di partenza non li conteneva</td>
+              <td>Il programma conserva ciò che trova; PNG e screenshot spesso non hanno EXIF.</td>
+            </tr>
+            <tr>
+              <td>L'elaborazione è lenta</td>
+              <td>File RAW di grandi dimensioni</td>
+              <td>L'anteprima usa una versione ridotta; l'elaborazione finale lavora a piena risoluzione.</td>
+            </tr>
+            <tr>
+              <td>Windows mostra un avviso</td>
+              <td>Certificato di sviluppo, non pubblico</td>
+              <td>È atteso. Verifica il nome FranchettiAcademy e l'hash del file.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 10 ------------------------------------------------------------ -->
+        <h2 id="glossario"><span class="num">10</span> Glossario</h2>
+
+        <dl class="glossario">
+          <dt>LUT</dt>
+          <dd>Look-Up Table: una tabella che trasforma un colore in un altro. Una LUT 3D lavora su triple di valori (rosso, verde, blu).</dd>
+          <dt>LUT 3D</dt>
+          <dd>Una mappa tridimensionale del colore. La dimensione 17³ significa 17 valori per ciascun canale, cioè 4.913 punti.</dd>
+          <dt><code>.cube</code></dt>
+          <dd>Formato testuale Adobe per le LUT 3D. Contiene la dimensione, il dominio e i valori di uscita.</dd>
+          <dt>Oklab</dt>
+          <dd>Spazio colore percettivo usato per costruire il look: separa luminosità e cromia in modo più prevedibile del semplice RGB.</dd>
+          <dt>sRGB</dt>
+          <dd>Spazio colore standard del web e della maggior parte dei monitor. Le LUT della Serie Lab sono pensate per sRGB.</dd>
+          <dt>Intensità</dt>
+          <dd>Percentuale di miscelazione tra immagine originale e risultato della LUT.</dd>
+          <dt>Riferimento</dt>
+          <dd>La fotografia da cui viene ricavato il look in Copia look.</dd>
+          <dt>EXIF</dt>
+          <dd>Dati incorporati nella fotografia: fotocamera, obiettivo, tempi, ISO, orientamento.</dd>
+          <dt>ICC</dt>
+          <dd>Profilo che descrive come interpretare i colori di un file. L'app incorpora il profilo sRGB nei JPEG.</dd>
+          <dt>MSIX</dt>
+          <dd>Formato di installazione delle app Windows. Include l'applicazione, il manifest e la firma digitale.</dd>
+          <dt>Certificato</dt>
+          <dd>File che identifica chi ha firmato il pacchetto. Un certificato di sviluppo non è emesso da un'autorità pubblica e va reso attendibile manualmente.</dd>
+        </dl>
+
+        <!-- 11 ------------------------------------------------------------ -->
+        <h2 id="privacy-licenza"><span class="num">11</span> Privacy, licenza, aggiornamenti</h2>
+
+        <h3>Privacy</h3>
+        <p>
+          Il programma non ha server, non richiede account e non invia
+          statistiche. Le immagini vengono lette e scritte solo nelle cartelle
+          che scegli. Il sito non usa cookie, non profila e non include
+          strumenti di terze parti; l'hosting può registrare i log tecnici come
+          qualsiasi server web. Dettagli nell'<a href="privacy.html">informativa
+          privacy</a>.
+        </p>
+
+        <h3>Licenza</h3>
+        <p>
+          Franchetti Lab è gratuito per uso personale e commerciale. Non puoi
+          venderlo, ridistribuirlo come prodotto tuo o rimuovere gli avvisi di
+          copyright. I 24 look possono essere usati e modificati liberamente,
+          anche in lavori commerciali, ma non rivenduti come raccolta a sé. Il
+          testo completo è in <code>LICENZA.txt</code>.
+        </p>
+
+        <h3>Aggiornamenti</h3>
+        <p>
+          La versione si aggiorna installando il nuovo pacchetto MSIX sopra il
+          precedente. I look salvati come <code>.cube</code> restano file
+          normali e continuano a funzionare. La pubblicazione sul Microsoft
+          Store è in programma; fino ad allora l'installazione richiede il
+          passaggio sul certificato descritto al capitolo 02.
+        </p>
+
+        <div class="guida-chiusura">
+          <h2 id="altri-link"><span class="num">→</span> Da qui</h2>
+          <p>
+            Torna al <a href="index.html#scarica">download</a>, guarda i
+            <a href="index.html#confronti">confronti</a> o apri la
+            <a href="index.html#look">galleria dei 24 look</a>.
+          </p>
+          <p>
+            Per problemi non elencati:
+            <a href="mailto:reportage@libero.it">reportage@libero.it</a>.
+            Se scrivi, indica la versione di Windows, il passaggio in cui si
+            blocca e il messaggio esatto: aiuta a rispondere meglio.
+          </p>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede__testa">
+      <a class="marchio marchio--piede" href="index.html" aria-label="Franchetti Lab, torna al sito">
+        <svg class="marchio__segno" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="13.4" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <polygon points="20,12.6 26.4,16.3 26.4,23.7 20,27.4 13.6,23.7 13.6,16.3" fill="currentColor" opacity=".9" />
+          <path d="M20 20 20 6.6M20 20 31.6 26.7M20 20 8.4 26.7" stroke="currentColor" stroke-width="1.1" />
+        </svg>
+        <span class="marchio__testo">
+          <strong>Franchetti Lab</strong>
+          <small>Suite di strumenti per fotografi</small>
+        </span>
+      </a>
+      <p class="piede__frase">Un riferimento. Tutta la serie.</p>
+    </div>
+    <div class="piede__colonne">
+      <nav aria-label="Sito">
+        <h2>Il programma</h2>
+        <a href="index.html#novita">Novità 0.1</a>
+        <a href="index.html#confronti">Confronti</a>
+        <a href="index.html#look">I 24 look</a>
+        <a href="index.html#scarica">Download</a>
+      </nav>
+      <nav aria-label="Informazioni">
+        <h2>Informazioni</h2>
+        <a href="crediti.html">Crediti fotografici</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:reportage@libero.it">reportage@libero.it</a>
+      </nav>
+      <div class="piede__nota">
+        <h2>Versione</h2>
+        <p>0.1.0 · Windows 10 e 11<br />MSIX 64 bit · LUT 17³</p>
+        <p>Gratuito. Nessun account, nessun tracciamento.</p>
+      </div>
+    </div>
+    <div class="piede__legale">
+      <p>© <span id="anno">2026</span> Franchetti. Tutti i diritti riservati.</p>
+      <p>Windows è un marchio di Microsoft Corporation. Questo sito non è affiliato a Microsoft. <a href="crediti.html">Crediti fotografici</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
